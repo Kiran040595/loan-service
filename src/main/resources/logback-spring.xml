@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- App name property (customize if needed) -->
+    <property name="APP_NAME" value="api-gateway" />
+
+    <!-- Console output -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %cyan([${APP_NAME}]) %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Set root logging level -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Optional: Fine-tune specific packages -->
+    <logger name="org.springframework.cloud.gateway" level="INFO" />
+    <logger name="org.springframework.web" level="INFO" />
+
+</configuration>
